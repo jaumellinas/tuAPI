@@ -4,6 +4,7 @@ import pymysql
 
 load_dotenv()
 
+# Configuració de la base de dades (es reb des de les variables d'entorn)
 DB_CONFIG = {
     "host": os.getenv("MARIADB_HOST"),
     "port": int(os.getenv("MARIADB_PORT")),
@@ -14,6 +15,7 @@ DB_CONFIG = {
     "cursorclass": pymysql.cursors.Cursor
 }
 
+# Clau secreta per a encriptar sessions i validesa de les mateixes
 SECRET_KEY = os.getenv("SECRET_KEY",)
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))

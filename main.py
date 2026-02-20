@@ -7,8 +7,8 @@ from app.api.v1 import router as v1_router
 load_dotenv()
 
 app = FastAPI(
-    title="sakilaAPI",
-    description="API RESTful para manejar clientes y reservas en la base de datos de películas 'sakila'.",
+    title="tuAPI",
+    description="API RESTful per a manejar dades de passatgers, targetes i codis QR de l'infraestructura del Transport de les Illes Balears",
     version="1.0.0",
 )
 app.include_router(v1_router)
@@ -16,17 +16,18 @@ app.include_router(v1_router)
 @app.get(
     "/",
     name="Endpoint inicial",
-    summary="Información de la API",
-    description="Devuelve la información básica de la API, siendo esta información su nombre, su versión y los endpoints disponibles",
+    summary="Informació de l'API",
+    description="Retorna la informació bàsica de l'API, essent aquesta informació el nom, la versió i els endpoints disponibles",
     tags=["General"]
 )
 async def root():
     return {
-        "message": "sakilaAPI v1.0.0",
+        "message": "tuAPI v1.0.0",
         "endpoints": {
-            "customers": "/api/v1/customers",
-            "rentals": "/api/v1/rentals",
-            "auth": "/api/v1/auth",
+            "passatger": "/api/v1/passatger",
+            "targeta": "/api/v1/targeta",
+            "targeta_virtual": "/api/v1/targeta/virtual",
+            "authentication": "/api/v1/auth",
             "docs": "/docs"
         }
     }
