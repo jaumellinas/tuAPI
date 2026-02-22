@@ -300,7 +300,7 @@ Content-Type: application/json
 | Mètode | Endpoint | Descripció | Auth |
 |---------|-----------|-------------|------|
 | `POST` | `/api/v1/targetes-virtuals` | Genera QR temporal (60s) | Bearer |
-| `POST` | `/api/v1/targetes-virtuals/verificar` | Verifica validesa d'un QR | Bearer (operador) |
+| `POST` | `/api/v1/targetes-virtuals/verify` | Verifica validesa d'un QR | Bearer (operador) |
 | `GET` | `/api/v1/targetes-virtuals/{id}/qr` | Descarrega imatge QR | Bearer |
 
 **Exemple - Generar QR:**
@@ -324,7 +324,7 @@ Authorization: Bearer eyJhbGci...
 **Exemple - Verificar QR:**
 
 ```bash
-POST /api/v1/targetes-virtuals/verificar
+POST /api/v1/targetes-virtuals/verify
 Authorization: Bearer eyJhbGci...
 Content-Type: application/json
 
