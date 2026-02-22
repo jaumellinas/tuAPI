@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    ports:
+      - "${FASTAPI_PORT:-8000}:8000"
+    env_file:
+      - .env
+    networks:
+      - sql
+      - inter
+    restart: unless-stopped
+
+networks:
+  sql:
+    external: true
+  inter:
+    external: true
